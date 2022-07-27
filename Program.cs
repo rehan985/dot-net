@@ -113,8 +113,8 @@ class doctor :admin
  int option;
  int pnum;
 
- string presciption;
- public void menu1()
+ public string presciption;
+ public void menu2()
  
  { 
  
@@ -153,10 +153,31 @@ break;
     
    static void Main(string[] args)
     {
-     
-     admin myobj = new admin();
+     int select ;
+     Console.WriteLine("SELECT FROM MENU");
+     Console.WriteLine("ADMIN");
+     Console.WriteLine("DOCTOR ");
+     select = Console.Read();
+     switch(select)
+     {
+      case 1:
+      {
+        admin myobj = new admin();
+        myobj.menu1();
+        break;
+      }
+      case 2:
+      {
+        doctor myobj1 = new doctor();
+        myobj1.menu2();
 
-     myobj.menu1();
+        break;
+      }
+
+
+     }
+
+     
       
     }
   }
