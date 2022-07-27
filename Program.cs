@@ -12,13 +12,21 @@ interface management
 
 }
   
-  class Program
+  class patient
   {
-    static void menu(){
-      int input;
+
+ string[] name = new string [4];
+int[] age = new int [4];
+string[] address = new string [4];
+string[] disease = new string [4];
+ int input;
+   
 
 
-      Console.WriteLine("SELECT THE OPTIONS FROM MENU");
+
+    public void menu(){
+      
+      Console.WriteLine("\n SELECT THE OPTIONS FROM MENU \n ");
       Console.WriteLine("1.  ADD RECORD");
       Console.WriteLine("2.  VIEW RECORD");
       Console.WriteLine("3.  SEARCH RECORD");
@@ -30,6 +38,7 @@ interface management
         case 1:
         {
           add();
+          menu();
           break;
         }
         case 2:
@@ -39,34 +48,66 @@ interface management
         }
         case 3:
         {
-          search();
+         // search();
           break;
         }
         case 4:
         {
-          update();
+         // update();
+          break;
         }
 
-        default:
+        default :
         {
           Console.WriteLine("YOU HAVE NOT SELECTED FROM THE MENU ");
+          break;
         }
       }
-
-      
-      
-
-
+   
     }
 
 
+  public void add(){
+
+Console.WriteLine("\n ENTER PATIENT DETAILS BELOW \n ");
+
+for(int i=0;i<4; i++)
+{
+Console.WriteLine(" \n \n ENTER PATIENT NAME {0} " ,i );
+name[i]=Console.ReadLine();
+Console.WriteLine("ENTER PATIENT AGE ");
+age[i]=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("ENTER PATIENT ADDRESS ");
+address[i]=Console.ReadLine();
+Console.WriteLine("ENTER PATIENT DISEASE ");
+disease[i]=Console.ReadLine();
+}
+  }  
+
+
+public void show()
+{
+ Console.WriteLine("\n HERE IS THE PATIENT DATA \n");
+
+for(int i=0;i<4;i++)
+{
+ Console.WriteLine( name[i] + "\t" + age[i] + "\t" + address[i] + "\t" + disease[i] + "\n" );
+
+
+}
+}
 
 
 
-  static void Main(string[] args)
+
+
+   static void Main(string[] args)
     {
      
-      menu();
+     patient myobj = new patient();
+
+     myobj.menu();
+      
     }
   }
   }
