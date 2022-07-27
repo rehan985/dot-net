@@ -5,27 +5,29 @@ namespace code
 interface management
 {
  void menu();
+ void menu1();
+ void menu2();
  void add();
  void search();
  void show();
- void update();
+void description();
 
 }
   
-  class patient
+  class admin
   {
 
- string[] name = new string [4];
-int[] age = new int [4];
-string[] address = new string [4];
-string[] disease = new string [4];
+ public string[] name = new string [4];
+public int[] age = new int [4];
+public string[] address = new string [4];
+public string[] disease = new string [4];
  int input;
  int number;
    
 
 
 
-    public void menu(){
+    public void menu1(){
       
       Console.WriteLine("\n SELECT THE OPTIONS FROM MENU \n ");
       Console.WriteLine("1.  ADD RECORD");
@@ -38,7 +40,7 @@ string[] disease = new string [4];
         case 1:
         {
           add();
-          menu();
+          menu1();
           break;
         }
         case 2:
@@ -104,12 +106,57 @@ number = Console.Read();
 
 
 
+  }
+
+class doctor :admin 
+{
+ int option;
+ int pnum;
+
+ string presciption;
+ public void menu1()
+ 
+ { 
+ 
+ Console.WriteLine(" Select the one option ");
+ Console.WriteLine("1. View Patient Data ");
+ Console.WriteLine(" 2. Add desciption");
+option = Console.Read();
+
+switch(option)
+{
+  case 1 :
+{
+    Console.WriteLine("Enter the patient number");
+    pnum = Console.Read();
+    Console.WriteLine( name[pnum] + "\t" + age[pnum] + "\t" + address[pnum] + "\t" + disease[pnum] + "\n" );
+
+    break;
+} 
+
+case 2:
+Console.WriteLine("Enter patient presciption here ");
+presciption=Console.ReadLine();
+break;
+}
+
+}
+
+
+
+
+
+} 
+
+  class program{
+
+    
    static void Main(string[] args)
     {
      
-     patient myobj = new patient();
+     admin myobj = new admin();
 
-     myobj.menu();
+     myobj.menu1();
       
     }
   }
