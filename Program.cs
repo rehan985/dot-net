@@ -20,6 +20,7 @@ int[] age = new int [4];
 string[] address = new string [4];
 string[] disease = new string [4];
  int input;
+ int number;
    
 
 
@@ -30,7 +31,6 @@ string[] disease = new string [4];
       Console.WriteLine("1.  ADD RECORD");
       Console.WriteLine("2.  VIEW RECORD");
       Console.WriteLine("3.  SEARCH RECORD");
-      Console.WriteLine("4.  UPDATE RECORD");
       input = Convert.ToInt32(Console.ReadLine());
 
       switch (input)
@@ -48,15 +48,10 @@ string[] disease = new string [4];
         }
         case 3:
         {
-         // search();
+          search();
           break;
         }
-        case 4:
-        {
-         // update();
-          break;
-        }
-
+      
         default :
         {
           Console.WriteLine("YOU HAVE NOT SELECTED FROM THE MENU ");
@@ -97,6 +92,14 @@ for(int i=0;i<4;i++)
 }
 }
 
+public void search(){
+
+Console.WriteLine("Search the Patient reccord on bases of number , Enter number below ");
+number = Console.Read();
+
+  Console.WriteLine( name[number] + "\t" + age[number] + "\t" + address[number] + "\t" + disease[number] + "\n");
+
+}
 
 
 
