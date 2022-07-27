@@ -1,41 +1,72 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace code 
 {
+interface management
+{
+ void menu();
+ void add();
+ void search();
+ void show();
+ void update();
+
+}
+  
   class Program
   {
-    static void function()
-    {
-      Console.WriteLine("my first function ");
-    }
-    static void Main(string[] args)
-    {
-      int a=4;
-      double b=2.34;
-      string c="rehan";
-      string alpha;
+    static void menu(){
+      int input;
 
-      Console.WriteLine(a);
-      Console.WriteLine(b);   
-      Console.WriteLine(a+b); 
-      Console.WriteLine(c);
-      Console.WriteLine("enter your name");
-      Console.WriteLine("here is your name "+ c);  
-      function();  
-      
-      for(int i=0;i<3;i++){
 
-        Console.WriteLine("enter you marks ");
-        alpha = Console.ReadLine();
-        Console.WriteLine(alpha);
-      }
-      for(int i=0;i<3;i++)
+      Console.WriteLine("SELECT THE OPTIONS FROM MENU");
+      Console.WriteLine("1.  ADD RECORD");
+      Console.WriteLine("2.  VIEW RECORD");
+      Console.WriteLine("3.  SEARCH RECORD");
+      Console.WriteLine("4.  UPDATE RECORD");
+      input = Convert.ToInt32(Console.ReadLine());
+
+      switch (input)
       {
-        Console.WriteLine(alpha);
-        function();
-        Console.WriteLine("i am rehan");
+        case 1:
+        {
+          add();
+          break;
+        }
+        case 2:
+        {
+          show();
+          break;
+        }
+        case 3:
+        {
+          search();
+          break;
+        }
+        case 4:
+        {
+          update();
+        }
+
+        default:
+        {
+          Console.WriteLine("YOU HAVE NOT SELECTED FROM THE MENU ");
+        }
       }
 
+      
+      
+
+
+    }
+
+
+
+
+
+  static void Main(string[] args)
+    {
+     
+      menu();
     }
   }
   }
