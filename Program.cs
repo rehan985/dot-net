@@ -46,6 +46,8 @@ public string[] disease = new string [4];
         case 2:
         {
           show();
+          // menu1();
+
           break;
         }
         case 3:
@@ -97,7 +99,7 @@ for(int i=0;i<4;i++)
 public void search(){
 
 Console.WriteLine("Search the Patient reccord on bases of number , Enter number below ");
-number = Console.Read();
+number =Convert.ToInt32(Console.ReadLine());
 
   Console.WriteLine( name[number] + "\t" + age[number] + "\t" + address[number] + "\t" + disease[number] + "\n");
 
@@ -121,14 +123,14 @@ class doctor :admin
  Console.WriteLine(" Select the one option ");
  Console.WriteLine("1. View Patient Data ");
  Console.WriteLine(" 2. Add desciption");
-option = Console.Read();
+option = Convert.ToInt32(Console.ReadLine());
 
 switch(option)
 {
   case 1 :
 {
     Console.WriteLine("Enter the patient number");
-    pnum = Console.Read();
+    pnum = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine( name[pnum] + "\t" + age[pnum] + "\t" + address[pnum] + "\t" + disease[pnum] + "\n" );
 
     break;
@@ -148,31 +150,33 @@ break;
 
 } 
 
-  class program{
+  class program
+  {
 
     
    static void Main(string[] args)
     {
      int select ;
      Console.WriteLine("SELECT FROM MENU");
-     Console.WriteLine("ADMIN");
-     Console.WriteLine("DOCTOR ");
-     select = Console.Read();
-     switch(select)
-     {
-      case 1:
-      {
-        admin myobj = new admin();
-        myobj.menu1();
-        break;
-      }
-      case 2:
-      {
+    //  Console.WriteLine("ADMIN");
+    //  Console.WriteLine("DOCTOR ");
+    //  select = Console.Read();
+    //  switch(select)
+    //  {
+      // case 1:
+      // {
+      //   admin myobj = new admin();
+      //   myobj.menu1();
+      //   break;
+      // }
+      // case 1:
+      // {
         doctor myobj1 = new doctor();
+        myobj1.menu1();
         myobj1.menu2();
 
-        break;
-      }
+      //   break;
+      // }
 
 
      }
@@ -181,4 +185,4 @@ break;
       
     }
   }
-  }
+  // }
